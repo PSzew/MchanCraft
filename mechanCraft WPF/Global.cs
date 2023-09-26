@@ -18,5 +18,16 @@ namespace mechanCraft_WPF
             public string? DeviceID { get; set; }
             public string? Description { get; set; }
         }
+        public class Question
+        {
+            public string question { get; set; }
+            public int anwser { get; set; }
+
+            public Question(string question, int anwser)
+            {
+                this.question = question;
+                this.anwser = anwser;
+            }
+        }
     }
 }
