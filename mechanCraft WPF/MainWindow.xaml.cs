@@ -49,7 +49,7 @@ namespace mechanCraft_WPF
 
         private void send(object sender, RoutedEventArgs e)
         {
-            if(questioncounter==2)
+            if(questioncounter==4)
             {
                 try
                 {
