@@ -1,0 +1,18 @@
+SERVO:
+brązowy-GND
+czerwony-5V
+pomarańczowy 9~
+-----------------------------------
+Ekran:
+GND-GND
+VCC-5V
+SDA-2 pin od strony portu usb
+SCL-1 pin od strony portu usb
+-----------------------------------
+Buzzer:
++ - 10~
+- - GND
+----------------------------------
+
+
+Do połączenia wszystkich + i - można użyć płytki stykowej!
