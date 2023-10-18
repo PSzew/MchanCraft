@@ -49,8 +49,16 @@ namespace mechanCraft_WPF
 
         private void send(object sender, RoutedEventArgs e)
         {
-            if(questioncounter==4)
+            if(questioncounter==2)
             {
+                try
+                {
+                    Serialport.serialPort.Write(wynik.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 if (Serialport.serialPort == null || Serialport.serialPort.IsOpen == false)
                 {
                     MessageBox.Show("Błąd połączenia!", "MechanCraft", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -66,8 +74,17 @@ namespace mechanCraft_WPF
                         isValidResult = true;
                     else
                     {
+                        try
+                        {
+                            Serialport.serialPort.Write("e");
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
                         MessageBox.Show("Nie poprawny wynik,spróbuj ponownie!", "MechanCraft", MessageBoxButton.OK, MessageBoxImage.Warning);
                         reset();
+                        
                     }
                 }
                 else
@@ -94,6 +111,14 @@ namespace mechanCraft_WPF
             else
             {
                 userpin += wynik.Text;
+                try
+                {
+                    Serialport.serialPort.Write(wynik.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }     
                 nextQuestion();
             }
         }
@@ -123,6 +148,14 @@ namespace mechanCraft_WPF
             userpin = "";
             questioncounter = 0;
             nextQuestion();
+            try
+            {
+                Serialport.serialPort.Write("c");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void BoxClose()
         {
